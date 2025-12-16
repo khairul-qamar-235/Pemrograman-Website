@@ -90,7 +90,7 @@ $data = mysqli_fetch_assoc($result);
                         <?= $data['keluhan']; ?>
                     </div>
 
-                    <form action="update_medical_record.php" method="post">
+                    <form action="update_visit.php" method="post">
                         <input type="hidden" name="id_kunjungan" value="<?= $data['id_kunjungan']; ?>">
 
                         <div class="mb-3">
@@ -123,7 +123,7 @@ $data = mysqli_fetch_assoc($result);
             Resep Obat
         </div>
         <div class="card-body">
-            <form action="update_prescription.php" method="post">
+            <form action="add_prescription.php" method="post">
                 <input type="hidden" name="id_kunjungan" value="<?= $data['id_kunjungan']; ?>">
 
                 <div class="mb-3">
@@ -149,3 +149,4 @@ $data = mysqli_fetch_assoc($result);
 
 </body>
 </html>
+
