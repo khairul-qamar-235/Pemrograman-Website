@@ -41,8 +41,6 @@ $data = mysqli_fetch_assoc($result);
 <head>
     <meta charset="UTF-8">
     <title>Halaman Pasien</title>
-
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
@@ -50,7 +48,6 @@ $data = mysqli_fetch_assoc($result);
 
 <div class="container mt-5 mb-5">
 
-    <!-- HEADER -->
     <div class="card mb-4">
         <div class="card-header bg-danger text-white text-center">
             <h3 class="mb-0">Informasi Pasien</h3>
@@ -60,10 +57,7 @@ $data = mysqli_fetch_assoc($result);
         </div>
     </div>
 
-    <!-- DATA PRIBADI & KUNJUNGAN -->
     <div class="row">
-
-        <!-- DATA PRIBADI PASIEN -->
         <div class="col-md-6">
             <div class="card mb-4">
                 <div class="card-header bg-primary text-white">
@@ -79,8 +73,7 @@ $data = mysqli_fetch_assoc($result);
                 </div>
             </div>
         </div>
-
-        <!-- INFORMASI KUNJUNGAN -->
+        
         <div class="col-md-6">
             <div class="card mb-4">
                 <div class="card-header bg-primary text-white">
@@ -99,7 +92,6 @@ $data = mysqli_fetch_assoc($result);
 
     </div>
 
-    <!-- INFORMASI RESEP -->
     <div class="card mb-4">
         <div class="card-header bg-info text-white">
             Informasi Resep Obat
@@ -110,8 +102,6 @@ $data = mysqli_fetch_assoc($result);
             <p><strong>Status Resep:</strong> <?= $data['status']; ?></p>
         </div>
     </div>
-
-    <!-- KELUHAN PASIEN -->
     <div class="card mb-4">
         <div class="card-header bg-warning">
             Keluhan Pasien
@@ -135,4 +125,5 @@ $data = mysqli_fetch_assoc($result);
 
 </body>
 </html>
+
 
