@@ -1,27 +1,28 @@
 <?php
-require_once '../config/db.php';
-if (isset($_POST['id_kunjungan'], $_POST['diagnosis'], $_POST['catatan'], $_POST['tanggal_kontrol_selanjutnya'])) {
+include "config/db.php";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $id_kunjungan = $_POST['id_kunjungan'];
     $diagnosis = $_POST['diagnosis'];
     $catatan = $_POST['catatan'];
     $tanggal_kontrol_selanjutnya = $_POST['tanggal_kontrol_selanjutnya'];
 
-    $sql = "UPDATE kunjungan 
-            SET diagnosis = ?, catatan = ?, tanggal_kontrol_selanjutnya = ? 
-            WHERE id_kunjungan = ?";
+    $query = "
+        UPDATE kunjungan
+        SET diagnosis = '$diagnosis',
+            catatan = '$catatan',
+            tanggal_kontrol_selanjutnya = '$tanggal_kontrol_selanjutnya'
+        WHERE id_kunjungan = '$id_kunjungan'
+    ";
 
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sssi", $diagnosis, $catatan, $tanggal_kontrol_selanjutnya, $id_kunjungan);
-
-    if ($stmt->execute()) {
-        header("Location: ../doctor.php?success=update");
-        exit();
+    if (mysqli_query($koneksi, $query)) {
+        header("Location: doctor.php");
+        exit;
     } else {
-        echo "Error: " . $stmt->error;
+        echo "Gagal memperbarui kunjungan: " . mysqli_error($koneksi);
     }
-
 } else {
-    echo "Data tidak lengkap!";
+    echo "Akses tidak valid.";
 }
 ?>
