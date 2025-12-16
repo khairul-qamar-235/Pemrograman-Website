@@ -117,7 +117,7 @@ $data = mysqli_fetch_assoc($result);
             Keluhan Pasien
         </div>
         <div class="card-body">
-            <form action="update_keluhan.php" method="post">
+            <form action="update_complaint.php" method="post">
                 <input type="hidden" name="id_kunjungan" value="<?= $data['id_kunjungan']; ?>">
 
                 <div class="mb-3">
@@ -135,3 +135,4 @@ $data = mysqli_fetch_assoc($result);
 
 </body>
 </html>
+
