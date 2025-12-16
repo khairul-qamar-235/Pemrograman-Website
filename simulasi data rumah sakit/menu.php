@@ -28,7 +28,7 @@
         }
 
         .menu-button:hover {
-            background-color: #0056bff;
+            background-color: #0056bf;
         }
     </style>
 </head>
@@ -42,3 +42,4 @@
 
 </body>
 </html>
+
